@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan's Angular Application</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body ng-app="App">
+    
+    <h1>Exotic Weapons and Armor</h1>
+
+    <button ng-click="toTitanArmor()">Titan Armor</button>
+    <button ng-click="toWeapons()">Weapons</button>
+
+    <div ng-controller="homeController">
+        <div ng-repeat="weapon in $scope.weaponList">
+            Name - {{weapon.name}}
+            Image - {{weapon.pic}}
+            Where to find - {{weapon.location}}
+        </div>
+    </div>
+    <div ng-controller="yourController">
+        <div ng-repeat="weapon in $scope.yourWeaponList">
+            {{weapon.pic}}
+        </div>
+    </div>
+</body>
+</html>
