@@ -4,26 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan's Angular Application</title>
-    @Styles.Render("~/Content/css")
+    <style>
+
+        
+        .inactive {
+            border: 1px solid #021a40;
+        }
+        .active {
+            border: 3px solid #021a40;
+            filter: brightness(150%);
+        }
+        .weapon {
+        }   
+    </style>
 </head>
-<body ng-app="App">
+<body ng-app="App" ng-controller="mainController as ctrl">
     
     <h1>Exotic Weapons and Armor</h1>
 
     <button ng-click="toTitanArmor()">Titan Armor</button>
     <button ng-click="toWeapons()">Weapons</button>
+    <div class="table-responsive">
+    <table class="table">
+        <tr ng-repeat="weapon in ctrl.weaponList">
+            <td><img class="weapon inactive" ng-if="!weapon.active" ng-click="ctrl.toggle($index)" ng-src="{{weapon.image}}" width="50px" height="50px" />
+            <img class="weapon active" ng-if="weapon.active" ng-click="ctrl.toggle($index)" ng-src="{{weapon.image}}" width="50px" height="50px" />
+            </td>
+        </tr>
+    </table>
+        </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="~/App/angular.module.js"></script>
 
-    <div ng-controller="homeController">
-        <div ng-repeat="weapon in $scope.weaponList">
-            Name - {{weapon.name}}
-            Image - {{weapon.pic}}
-            Where to find - {{weapon.location}}
-        </div>
-    </div>
-    <div ng-controller="yourController">
-        <div ng-repeat="weapon in $scope.yourWeaponList">
-            {{weapon.pic}}
-        </div>
-    </div>
 </body>
 </html>
