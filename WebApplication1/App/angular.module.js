@@ -4,8 +4,7 @@
             var vm = this;
             console.log(vm.weaponList);
             vm.init = function () {
-                $cookies.remove('weaponList');
-                console.log("Cookies - " + $cookies.getAll());
+                console.log($cookies.getAll());
                 var cookies = $cookies.get('weaponList');
                 if (cookies == undefined) {
                     console.log("Initial Setup");
@@ -17,7 +16,7 @@
                     vm.initialSetup();
                     var cookies = $cookies.get('weaponList');
                     for (i = 0; i < vm.weaponList.length; i++) {
-                        if (cookies[i] == 't') {
+                        if (cookies[i] == '1') {
                             vm.weaponList[i].active = true;
                         }
                         else {
@@ -27,10 +26,6 @@
                     }
                 }
             };
-            
-        vm.toTitanArmor = function () {
-            //this needs to be a component thing
-        };
 
         vm.toggle = function (item) {
             item.active = !item.active;
@@ -53,14 +48,5 @@
             vm.warlockList = warlockExoticArmorList;
             vm.titanList = titanExoticArmorList;
         }
-
-        vm.showMouseover = function (item) {
-            item.popover = true;
-        };
-
-        vm.hideMouseover = function (item) {
-            item.popover = false;
-        };
-
     }]
 )
