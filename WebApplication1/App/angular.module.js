@@ -1,11 +1,11 @@
-﻿var app = angular.module('App', ['ngCookies'])
+﻿var app = angular.module('App', ['ngAnimate', 'ui.bootstrap', 'ngCookies'])
     .controller('mainController', ['$cookies',
         function ($cookies) {
             var vm = this;
             console.log(vm.weaponList);
             vm.init = function () {
-                $cookies.remove("weaponList");
-                
+                $cookies.remove('weaponList');
+                console.log("Cookies - " + $cookies.getAll());
                 var cookies = $cookies.get('weaponList');
                 if (cookies == undefined) {
                     console.log("Initial Setup");
@@ -49,14 +49,18 @@
 
         vm.initialSetup = function () {
             vm.weaponList = exoticWeaponList;
+            vm.hunterList = hunterExoticArmorList;
+            vm.warlockList = warlockExoticArmorList;
+            vm.titanList = titanExoticArmorList;
         }
 
-        vm.showMouseover = function () {
-            vm.popoverIsVisible = true;
+        vm.showMouseover = function (item) {
+            item.popover = true;
         };
 
-        vm.hideMouseover = function () {
-            vm.popoverIsVisible = false;
+        vm.hideMouseover = function (item) {
+            item.popover = false;
         };
+
     }]
 )

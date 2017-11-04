@@ -1,11 +1,4 @@
-﻿body {
-    background: black;
-}
-
-h1 {
-    color: white;
-}
-
+﻿
 .inactive {
     outline: 5px solid black;
 }
@@ -20,9 +13,4 @@ h1 {
     width: 100px;
     height: 70px;
     outline-offset: -4px;
-}
-
-.popover {
-    position: absolute;
-    z-index: 100;
 }
