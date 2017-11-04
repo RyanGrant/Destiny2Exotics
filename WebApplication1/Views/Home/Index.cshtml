@@ -3,39 +3,60 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan's Angular Application</title>
-    <style>
-
-        
-        .inactive {
-            border: 1px solid #021a40;
-        }
-        .active {
-            border: 3px solid #021a40;
-            filter: brightness(150%);
-        }
-        .weapon {
-        }   
-    </style>
+    <title>Destiny 2 Exotic Tracker</title>
+    <link rel="stylesheet" type="text/css" href="~/App/ToolTip.css">
+    <link rel="stylesheet" type="text/css" href="~/App/Main.css">
 </head>
-<body ng-app="App" ng-controller="mainController as ctrl">
+<body ng-app="App" ng-controller="mainController as ctrl" data-ng-init="ctrl.init()">
     
     <h1>Exotic Weapons and Armor</h1>
 
-    <button ng-click="toTitanArmor()">Titan Armor</button>
-    <button ng-click="toWeapons()">Weapons</button>
-    <div class="table-responsive">
-    <table class="table">
-        <tr ng-repeat="weapon in ctrl.weaponList">
-            <td><img class="weapon inactive" ng-if="!weapon.active" ng-click="ctrl.toggle($index)" ng-src="{{weapon.image}}" width="50px" height="50px" />
-            <img class="weapon active" ng-if="weapon.active" ng-click="ctrl.toggle($index)" ng-src="{{weapon.image}}" width="50px" height="50px" />
-            </td>
-        </tr>
-    </table>
-        </div>
+    <button>Titan Armor</button>
+    <button>Hunter Armor</button>
+    <button>Warlock Armor</button>
+    <button>Weapons</button>
+    <br />
+    <span ng-repeat="item in ctrl.weaponList">
+        <img class="item inactive" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="!item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+        <img class="item active" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+    </span>
+    <!--
+    <br />
+    <span ng-repeat="item in ctrl.hunterList">
+        <img class="item inactive" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="!item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+        <img class="item active" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+    </span>
+    <br />
+    <span ng-repeat="item in ctrl.warlockList">
+        <img class="item inactive" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="!item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+        <img class="item active" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+    </span>
+    <br />
+    <span ng-repeat="item in ctrl.titanList">
+        <img class="item inactive" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="!item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+        <img class="item active" ng-mouseover="ctrl.showMouseover(item)" ng-mouseleave="ctrl.hideMouseover(item)" ng-if="item.active" ng-click="ctrl.toggle(item)" ng-src="{{item.image}}" />
+    </span>
+    -->
+    <p>Here are some examples of a <a class="tooltip" href="#">Classic<span class="classic">This is just an example of what
+        you can do using a CSS tooltip, feel free to get 
+        creative and produce your own!</span></a>, <a class="tooltip" href="#">Critical<span class="custom critical"><em>Critical</em>This is jus
+        t an example of what you can do using a CSS tooltip, feel free to get crea
+        tive and produce your own!</span></a>, <a class="tooltip" href="#">Help<span class="custom help"><em>Help</em>This is just an 
+        example of what you can do using a CSS tooltip, feel free to get creative and produce you
+        r own!</span></a>, <a class="tooltip" href="#">Information<span class="custom info"><em>Information</em>This is just an examp
+        le of what you can do using a CSS tooltip, feel free to get creative and produce yo
+        ur own!</span></a> and <a class="tooltip" href="#">Warning<span class="custom warning"><em>Warning</em>This is just an exam
+        ple of what you can do using a CSS tooltip, feel free to get creative and produce your own!</span></a> CSS powered 
+        tooltip. This is just an example of what you can do so feel free to get creative and produce your own!</p>
+
+
+    <div class="popover" ng-if="ctrl.popoverIsVisible">Popover Content</div>
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="~/App/Data/Hunter.js"></script>
+    <script src="~/App/Data/Titan.js"></script>
+    <script src="~/App/Data/Warlock.js"></script>
+    <script src="~/App/Data/Weapons.js"></script>
     <script src="~/App/angular.module.js"></script>
-
 </body>
 </html>

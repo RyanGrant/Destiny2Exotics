@@ -1,0 +1,28 @@
+﻿body {
+    background: black;
+}
+
+h1 {
+    color: white;
+}
+
+.inactive {
+    outline: 5px solid black;
+}
+
+.active {
+    outline: 5px solid yellow;
+    filter: brightness(150%);
+    box-shadow: 5px 5px 5px #fff;
+}
+
+.item {
+    width: 100px;
+    height: 70px;
+    outline-offset: -4px;
+}
+
+.popover {
+    position: absolute;
+    z-index: 100;
+}
