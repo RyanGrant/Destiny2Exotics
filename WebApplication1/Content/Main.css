@@ -9,3 +9,14 @@
     filter: brightness(150%);
     box-shadow: 5px 5px 5px #fff;
 }
+
+body {
+    background: black;
+}
+
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+}
