@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
@@ -32,7 +34,7 @@ namespace WebApplication1.Controllers
             String apiKey = "1b3f55b792004e41b894bd035ab93b3d";
             //client.Headers.Add("X-API-Key", apiKey);
             //request.Headers["X-My-Custom-Header"] = "the-value";
-            WebRequest webRequest = WebRequest.Create("http://www.bungie.net/Platform/Destiny2/Stats/Definition");
+            WebRequest webRequest = WebRequest.Create("http://www.bungie.net/Platform/Destiny2/Manifest");
             webRequest.Method = "GET";
             webRequest.Timeout = 12000;
             webRequest.ContentType = "application/json";
@@ -47,10 +49,18 @@ namespace WebApplication1.Controllers
                     Console.WriteLine(String.Format("Response: {0}", jsonResponse));
                 }
             }
-           
+            dynamic x = JsonConvert.DeserializeObject(result);
+            String y = x.Response.mobileAssetContentPath;
+            using (var client = new WebClient())
+            {
+                client.DownloadFile("http://bungie.net" + y, "manifest.zip");
+            }
+            //Destiny.Definitions.DestinyInventoryItemDefinition
+            //Destiny.Definitions.DestinyInventoryItemDefinition
+            //    Destiny.Definitions.DestinyInventoryBucketDefinition
 
             //var fantasyAPI = $http.get("http://www.bungie.net/Platform/Destiny2/Stats/Definition",
-              ///      { headers: { 'X-API-Key': apiKey } });
+            ///      { headers: { 'X-API-Key': apiKey } });
 
         }
 
