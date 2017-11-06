@@ -1,6 +1,6 @@
-﻿var app = angular.module('App', ['ngAnimate', 'ui.bootstrap', 'ngCookies', '$http'])
-    .controller('mainController', ['$cookies',
-        function ($cookies) {
+﻿var app = angular.module('App', ['ngAnimate', 'ui.bootstrap', 'ngCookies'])
+    .controller('mainController', ['$cookies', '$http',
+        function ($cookies, $http) {
             var vm = this;
             console.log(vm.weaponList);
             vm.init = function () {
@@ -55,81 +55,105 @@
                 }
             };
 
-        vm.toggle = function (item) {
-            item.active = !item.active;
-            var cookieWeapons = "";
-            var cookieHunter = "";
-            var cookieWarlock = "";
-            var cookieTitan = "";
+            vm.toggle = function (item) {
+                item.active = !item.active;
+                var cookieWeapons = "";
+                var cookieHunter = "";
+                var cookieWarlock = "";
+                var cookieTitan = "";
 
-            for (i = 0; i < vm.weaponList.length; i++) {
-                if (vm.weaponList[i].active) {
-                    cookieWeapons += '1';
-                }
-                else {
-                    cookieWeapons += '0';
+                for (i = 0; i < vm.weaponList.length; i++) {
+                    if (vm.weaponList[i].active) {
+                        cookieWeapons += '1';
+                    }
+                    else {
+                        cookieWeapons += '0';
 
-                }
-            } for (i = 0; i < vm.hunterList.length; i++) {
-                if (vm.hunterList[i].active) {
-                    cookieHunter += '1';
-                }
-                else {
-                    cookieHunter += '0';
+                    }
+                } for (i = 0; i < vm.hunterList.length; i++) {
+                    if (vm.hunterList[i].active) {
+                        cookieHunter += '1';
+                    }
+                    else {
+                        cookieHunter += '0';
 
-                }
-            } for (i = 0; i < vm.warlockList.length; i++) {
-                if (vm.warlockList[i].active) {
-                    cookieWarlock += '1';
-                }
-                else {
-                    cookieWarlock += '0';
+                    }
+                } for (i = 0; i < vm.warlockList.length; i++) {
+                    if (vm.warlockList[i].active) {
+                        cookieWarlock += '1';
+                    }
+                    else {
+                        cookieWarlock += '0';
 
-                }
-            } for (i = 0; i < vm.titanList.length; i++) {
-                if (vm.titanList[i].active) {
-                    cookieTitan += '1';
-                }
-                else {
-                    cookieTitan += '0';
+                    }
+                } for (i = 0; i < vm.titanList.length; i++) {
+                    if (vm.titanList[i].active) {
+                        cookieTitan += '1';
+                    }
+                    else {
+                        cookieTitan += '0';
 
+                    }
                 }
+                $cookies.put('weaponList', cookieWeapons);
+                $cookies.put('hunterList', cookieHunter);
+                $cookies.put('warlockList', cookieWarlock);
+                $cookies.put('titanList', cookieTitan);
             }
-            $cookies.put('weaponList', cookieWeapons);
-            $cookies.put('hunterList', cookieHunter);
-            $cookies.put('warlockList', cookieWarlock);
-            $cookies.put('titanList', cookieTitan);
-        }
 
-        vm.initialSetup = function () {
-            vm.weaponList = exoticWeaponList;
-            vm.hunterList = hunterExoticArmorList;
-            vm.warlockList = warlockExoticArmorList;
-            vm.titanList = titanExoticArmorList;
-        }
+            vm.initialSetup = function () {
+                vm.weaponList = exoticWeaponList;
+                vm.hunterList = hunterExoticArmorList;
+                vm.warlockList = warlockExoticArmorList;
+                vm.titanList = titanExoticArmorList;
+            }
 
-        vm.firstGet = function () {
-            $http.defaults.headers.common["Ocp-Apim-Subscription-Key"] = key;
+            vm.firstGet = function () {
+                //$http.defaults.headers.common["X-API-Key"] = "1b3f55b792004e41b894bd035ab93b3d";
+                const apiKey = '1b3f55b792004e41b894bd035ab93b3d';
+                var str = JSON.stringify(apiKey)
 
-            var fantasyAPI = $resource("http://www.bungie.net/Platform/Destiny/");
+
+                const HOST = 'http://www.bungie.net/Platform/Destiny/';
+                // $http.get('http://game.mywebsite.com/draw/', { params: { apiKey: 'apiKey' } });
+                const MANIFEST_URL = 'https://www.bungie.net/platform/Destiny/Manifest/';
+
+
+                var fantasyAPI = $http.get('http://www.bungie.net/Platform/Destiny2/Stats/Definition',
+                    { headers: { 'X-API-Key': apiKey } });
+                
+                //var fantasyAPI = $http.get('http://www.bungie.net/Platform/Destiny/2/Stats/GetMembershipIdByDisplayName/Psychinator/');
+
+
             console.log("API");
-            console.log(fantasyAPI);
-        }
+            console.log(fantasyAPI); 
+            //var baseRequest = request.defaults({ headers: { 'X-API-Key': credentials.destinyKey } });
             /*
-        const HOST = 'http://www.bungie.net/Platform/Destiny/';
+            $http.get('/test', function (req, res) {
+                if (!err && response.statusCode < 400) {
+                    baseRequest(HOST + '2/Stats/GetMembershipIdByDisplayName/Psychinator/',
+                        function (err, response, body) {
 
-        var baseRequest = request.defaults({ headers: { 'X-API-Key': credentials.destinyKey } });
+                            var context = {};
+                            context.test = JSON.stringify(JSON.parse(body), null, 4);
+                            res.render('test', context);
+                        });
+                }
+            });*/
 
-        app.get('/test', function (req, res) {
-            if (!err && response.statusCode < 400) {
-                baseRequest(HOST + '2/Stats/GetMembershipIdByDisplayName/' + credentials.defaultUserName + '/',
-                    function (err, response, body) {
+            //https://www.bungie.net/en/OAuth/Authorize
+            //22434
+            /*var req = {
+                method: 'GET',
+                url: 'http://www.bungie.net/Platform/Destiny/',
+                headers: {
+                    'key': '1b3f55b792004e41b894bd035ab93b3d'
+                }
+            }*/
+ 
+           
+        }
+        vm.firstGet();
 
-                        var context = {};
-                        context.test = JSON.stringify(JSON.parse(body), null, 4);
-                        res.render('test', context);
-                    });
-            }
-        });*/
     }]
 )
