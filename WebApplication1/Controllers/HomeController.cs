@@ -53,7 +53,7 @@ namespace WebApplication1.Controllers
             String y = x.Response.mobileAssetContentPath;
             using (var client = new WebClient())
             {
-                client.DownloadFile("http://bungie.net" + y, "manifest.zip");
+                client.DownloadFile("http://bungie.net" + y, @"C:\Users\ryan.grant\Desktop\git\dotnetwebapp\Manifest.zip");
             }
             //Destiny.Definitions.DestinyInventoryItemDefinition
             //Destiny.Definitions.DestinyInventoryItemDefinition
