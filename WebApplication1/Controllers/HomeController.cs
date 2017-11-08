@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
+using System.IO.Compression;
 
 namespace WebApplication1.Controllers
 {
@@ -55,14 +51,15 @@ namespace WebApplication1.Controllers
             {
                 client.DownloadFile("http://bungie.net" + y, @"C:\Users\ryan.grant\Desktop\git\dotnetwebapp\Manifest.zip");
             }
-            //Destiny.Definitions.DestinyInventoryItemDefinition
-            //Destiny.Definitions.DestinyInventoryItemDefinition
-            //    Destiny.Definitions.DestinyInventoryBucketDefinition
 
-            //var fantasyAPI = $http.get("http://www.bungie.net/Platform/Destiny2/Stats/Definition",
-            ///      { headers: { 'X-API-Key': apiKey } });
-
+            try
+            {
+                ZipFile.ExtractToDirectory(@"C:\Users\ryan.grant\Desktop\git\dotnetwebapp\Manifest.zip", @"C:\Users\ryan.grant\Desktop\git\dotnetwebapp\ManifestUnzip");
+            }
+            catch (Exception)
+            {
+                //If it already exists
+            }
         }
-
     }
 }
