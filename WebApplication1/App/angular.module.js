@@ -11,8 +11,8 @@
                     vm.initialSetup();
                 }
                 else {
-                    console.log("Loaded cookies");
-                    console.log(cookies);
+                    //console.log("Loaded cookies");
+                    //console.log(cookies);
                     vm.initialSetup();
                     var cookieWeapons = $cookies.get('weaponList');
                     var cookieHunter = $cookies.get('hunterList');
@@ -107,53 +107,5 @@
                 vm.warlockList = warlockExoticArmorList;
                 vm.titanList = titanExoticArmorList;
             }
-
-            vm.firstGet = function () {
-                //$http.defaults.headers.common["X-API-Key"] = "1b3f55b792004e41b894bd035ab93b3d";
-                const apiKey = '1b3f55b792004e41b894bd035ab93b3d';
-                var str = JSON.stringify(apiKey)
-
-
-                const HOST = 'http://www.bungie.net/Platform/Destiny/';
-                // $http.get('http://game.mywebsite.com/draw/', { params: { apiKey: 'apiKey' } });
-                const MANIFEST_URL = 'https://www.bungie.net/platform/Destiny/Manifest/';
-
-
-                var fantasyAPI = $http.get('http://www.bungie.net/Platform/Destiny2/Stats/Definition',
-                    { headers: { 'X-API-Key': apiKey } });
-                
-                //var fantasyAPI = $http.get('http://www.bungie.net/Platform/Destiny/2/Stats/GetMembershipIdByDisplayName/Psychinator/');
-
-
-            console.log("API");
-            console.log(fantasyAPI); 
-            //var baseRequest = request.defaults({ headers: { 'X-API-Key': credentials.destinyKey } });
-            /*
-            $http.get('/test', function (req, res) {
-                if (!err && response.statusCode < 400) {
-                    baseRequest(HOST + '2/Stats/GetMembershipIdByDisplayName/Psychinator/',
-                        function (err, response, body) {
-
-                            var context = {};
-                            context.test = JSON.stringify(JSON.parse(body), null, 4);
-                            res.render('test', context);
-                        });
-                }
-            });*/
-
-            //https://www.bungie.net/en/OAuth/Authorize
-            //22434
-            /*var req = {
-                method: 'GET',
-                url: 'http://www.bungie.net/Platform/Destiny/',
-                headers: {
-                    'key': '1b3f55b792004e41b894bd035ab93b3d'
-                }
-            }*/
- 
-           
-        }
-        vm.firstGet();
-
     }]
 )

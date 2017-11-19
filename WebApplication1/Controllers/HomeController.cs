@@ -10,7 +10,7 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Index()
         {
-            api();
+            //api();
             return View();
         }
 
@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
 
             return View();
         }
-
+        /*
         public void api()
         {
 
@@ -60,6 +60,9 @@ namespace WebApplication1.Controllers
             {
                 //If it already exists
             }
+
+
         }
+        */
     }
 }
