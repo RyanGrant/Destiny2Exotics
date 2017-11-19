@@ -2,12 +2,12 @@
     .controller('mainController', ['$cookies', '$http',
         function ($cookies, $http) {
             var vm = this;
-            console.log(vm.weaponList);
+            //console.log(vm.weaponList);
             vm.init = function () {
-                console.log($cookies.getAll());
+                //console.log($cookies.getAll());
                 var cookies = $cookies.get('weaponList');
                 if (cookies == undefined) {
-                    console.log("Initial Setup");
+                    //console.log("Initial Setup");
                     vm.initialSetup();
                 }
                 else {
