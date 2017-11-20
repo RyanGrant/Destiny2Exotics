@@ -30,6 +30,8 @@ def build_dict():
                             item_dict[item['displayProperties']['name']] = item['displayProperties']
                             item_dict[item['displayProperties']['name']]['type'] = item['itemTypeDisplayName']
                             item_dict[item['displayProperties']['name']]['tier'] = item['itemTypeAndTierDisplayName']
+                            item_dict[item['displayProperties']['name']]['image'] = "http://www.bungie.net" + item['displayProperties']['icon']
+                            item_dict[item['displayProperties']['name']]['active'] = "false"
                             try:
                                 item_dict[item['displayProperties']['name']]['class'] = item['quality']['infusionCategoryName']
                             except:
@@ -56,7 +58,6 @@ print(len(all_data))
 #print(all_data['Coldheart']['tier'])
 #print("Exotic" in all_data['Coldheart']['tier'])
 #print(not all_data['Raven Shard']['tier'])
-#cleanse tierless items AND non exotics
 weapons = []
 armor = []
 warlock = []
@@ -69,6 +70,9 @@ emotes = []
 vehicles = []
 traits = []
 for item in list(all_data):
+    del(all_data[item]['icon'])
+    del(all_data[item]['hasIcon'])
+
     if (all_data[item]['type'] == "Weapon Ornament"):
         weapon_ornaments.append(all_data[item])
     elif (all_data[item]['type'] == "Ship"):
@@ -102,7 +106,7 @@ for piece in armor:
     else:
         print(piece)
         
-#print(weapons)
+print(warlock)
 print(len(all_data))
 #print(all_data["Rat King"])
 #from collections import Counter

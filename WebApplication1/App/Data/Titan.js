@@ -1,32 +1,4 @@
 ﻿var titanExoticArmorList = [
-    {
-        name: "Peacekeepers",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/6/68/Peacekeepers_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908095045",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Lion Rampant",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/2/27/Lion_Rampant_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908094418",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Mask of the Quiet One",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/c/cb/Mask_of_the_Quiet_One_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908101351",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Doom Fang Pauldron",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/7/70/Doom_Fang_Pauldron_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908101835",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Synthoceps",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/9/9e/Synthoceps_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908101840",
-        active: false,
-        location: "Random"
-    }
+
+    { 'description': 'Whether on solid rock or shifting sand dune, the inexorable Sand Eaters never slow their pace.', 'name': 'Dunemarchers', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/a2e2f285d70d2fe23511278c071666f6.jpg', 'active': 'false', 'class': 'v300.titan.legs' }, { 'description': 'All expect that you should rouse yourself, as did the former lions of your blood.', 'name': 'Lion Rampant', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/bd9977d2267655736adc7c72a8fb4659.jpg', 'active': 'false', 'class': 'v300.titan.legs' }, { 'description': 'Designed for the seamless delivery of justice in an unjust world.', 'name': 'Peacekeepers', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/592dc38dd7a785ad28e83236559fc6ea.jpg', 'active': 'false', 'class': 'v300.titan.legs' }, { 'description': '"..."', 'name': 'Mask of the Quiet One', 'type': 'Helmet', 'tier': 'Helmet Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/cd76e4a21cb89cd5b850eba34a8df41c.jpg', 'active': 'false', 'class': 'v300.titan.head' }, { 'description': 'BRAINVAULT Sigma-ACTIUM-IX Cranial Dreadnought (Invincible Type)', 'name': 'An Insurmountable Skullfort', 'type': 'Helmet', 'tier': 'Helmet Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/c444f5213f554d715b0d7a9de1108e12.jpg', 'active': 'false', 'class': 'v300.titan.head' }, { 'description': 'Whoever survives our passing does so only by our consent.', 'name': 'Crest of Alpha Lupi', 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/5d9110e516e5828d881ffe17e7c1482e.jpg', 'active': 'false', 'class': 'v300.titan.chest' }, { 'description': 'Conflict Resolution Solution #3479: Leave them to rest wherever they may fall.', 'name': 'Actium War Rig', 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/957eae3f0e2e00ee7f8dba4b1f03c1e7.jpg', 'active': 'false', 'class': 'v300.titan.chest' }, { 'description': '"You who seek the Forge: your journey will be long, but your destination is closer than you think." —Ouros', 'name': 'Hallowfire Heart', 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/9f337b76f1abf670fac270b272818c2f.jpg', 'active': 'false', 'class': 'v300.titan.chest' }, { 'description': 'The Active Contact Defense system uses warsat hull materials to store a retaliatory charge.', 'name': 'ACD/0 Feedback Fence', 'type': 'Gauntlets', 'tier': 'Gauntlets Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/51fd51c3b825f132198ccbf02b4de7d2.jpg', 'active': 'false', 'class': 'v300.titan.arms' }, { 'description': 'Nobody calls it that.', 'name': 'Doom Fang Pauldron', 'type': 'Gauntlets', 'tier': 'Gauntlets Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/1e6af1d4e6ec8568434b1c8f8604b122.jpg', 'active': 'false', 'class': 'v300.titan.arms' }, { 'description': 'Caution: the organism has been known to develop consciousness. In these cases, immediate termination is recommended.', 'name': 'Synthoceps', 'type': 'Gauntlets', 'tier': 'Gauntlets Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/21d1f1aaf807996e1cfff5fc283fb59e.jpg', 'active': 'false', 'class': 'v300.titan.arms' }
 ];

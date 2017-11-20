@@ -1,45 +1,5 @@
 ﻿var hunterExoticArmorList = [
 
-    {
-        name: "St0mp-EE5",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/d/d5/St0mp-EE5_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908095938",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Lucky Pants",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/0/03/Lucky_Pants_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908095927",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Orpheus Rig",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/b/b4/Orpheus_Rig_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908095932",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Foetracer",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/6/68/Foetracer_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908100122",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Mechaneer's Tricksleeves",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/a/a3/Mechaneer%27s_Tricksleeves_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908100144",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "The Dragon's Shadow",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/c/ce/The_Dragon%27s_Shadow_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908100855",
-        active: false,
-        location: "Random"
-    },
-    {
-        name: "Raiden Flux",
-        image: "https://vignette.wikia.nocookie.net/destinypedia/images/3/33/Raiden_Flux_Screenshot.jpg/revision/latest/scale-to-width-down/1000?cb=20170908100901",
-        active: false,
-        location: "Random"
-    }
+    { 'description': 'Give me your arm, oh bearer mine. Let me help you fill the world with teeth.', 'name': "Young Ahamkara's Spine", 'type': 'Gauntlets', 'tier': 'Gauntlets Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/e7ccbff166a5a543df4f475f69f3ebf8.jpg', 'active': 'false', 'class': 'v300.hunter.arms' }, { 'description': '"This won\'t end well for one of us. And darling, it won\'t be me." —Self-styled "Lady" Olu Alderdice', 'name': "Mechaneer's Tricksleeves", 'type': 'Gauntlets', 'tier': 'Gauntlets Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/a11c0abd3b5a9d9ac128ff37aec61425.jpg', 'active': 'false', 'class': 'v300.hunter.arms' }, { 'description': '"It is my honor." —Chalco Yong to Ikora Rey', 'name': "The Dragon's Shadow", 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/5501d47a7916022c737494682c0c73ec.jpg', 'active': 'false', 'class': 'v300.hunter.chest' }, { 'description': "Interfaces with synapses (or nearest equivalent) to draw electric power directly from the wearer's body.", 'name': 'Raiden Flux', 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/e065a7ce827f8a1c624052595c4e7916.jpg', 'active': 'false', 'class': 'v300.hunter.chest' }, { 'description': "> No one has ever died wearing me.\n# It's true. She leaves the unworthy before they fall.", 'name': 'Lucky Raspberry', 'type': 'Chest Armor', 'tier': 'Chest Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/710504ae0aedfaa671f29e37dd041a4b.jpg', 'active': 'false', 'class': 'v300.hunter.chest' }, { 'description': '"What? No, I didn\'t illegally mod the holster. These are just really lucky pants!" —Cayde-6', 'name': 'Lucky Pants', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/68dc68ed3ce3f9361460b7d4a69bd351.jpg', 'active': 'false', 'class': 'v300.hunter.legs' }, { 'description': 'Never, ever, look back.', 'name': 'Orpheus Rig', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/0d6ae4296f1435209070142cf26dfd37.jpg', 'active': 'false', 'class': 'v300.hunter.legs' }, { 'description': '"I call them the Stompies! For when your legs need that extra kick." —Marcus Ren', 'name': 'St0mp-EE5', 'type': 'Leg Armor', 'tier': 'Leg Armor Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/8c7681f1e93ee996a724e55554e079e9.jpg', 'active': 'false', 'class': 'v300.hunter.legs' }, { 'description': '"I see you."', 'name': 'Foetracer', 'type': 'Helmet', 'tier': 'Helmet Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/5e995f3d538bbfdc83f887b11a1f747c.jpg', 'active': 'false', 'class': 'v300.hunter.head' }, { 'description': 'Starlight is your guide. No vacuum will contain you.', 'name': 'Celestial Nighthawk', 'type': 'Helmet', 'tier': 'Helmet Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/fa668959fe0812f22f277ac17d819747.jpg', 'active': 'false', 'class': 'v300.hunter.head' }, { 'description': 'You can see the point, right? Who wants to team up with one?', 'name': 'Knucklehead Radar', 'type': 'Helmet', 'tier': 'Helmet Exotic', 'image': 'http://www.bungie.net/common/destiny2_content/icons/5c085a24228eff7815014f82a6caeadf.jpg', 'active': 'false', 'class': 'v300.hunter.head' }
+
 ];
