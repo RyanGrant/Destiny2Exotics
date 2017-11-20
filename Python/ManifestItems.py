@@ -20,12 +20,20 @@ def build_dict():
     #'screenshot'
     #'itemTypeDisplayName'
     #'itemTypeAndTierDisplayName'
+    
     for item in item_jsons:
         if ( item['displayProperties']['name'] != "Classified" ):
             if ( item['itemTypeDisplayName'] != None):
-                item_dict[item['displayProperties']['name']] = item['displayProperties']
-                item_dict[item['displayProperties']['name']]['type'] = item['itemTypeDisplayName']
-                item_dict[item['displayProperties']['name']]['tier'] = item['itemTypeAndTierDisplayName']
+                if ( item['itemTypeAndTierDisplayName'] ):
+                    if ( "Exotic" in item['itemTypeAndTierDisplayName'] and "Intrinsic" not in item['itemTypeAndTierDisplayName']):
+                        if ( item['displayProperties']['name'] ):
+                            item_dict[item['displayProperties']['name']] = item['displayProperties']
+                            item_dict[item['displayProperties']['name']]['type'] = item['itemTypeDisplayName']
+                            item_dict[item['displayProperties']['name']]['tier'] = item['itemTypeAndTierDisplayName']
+                            try:
+                                item_dict[item['displayProperties']['name']]['class'] = item['quality']['infusionCategoryName']
+                            except:
+                                item_dict[item['displayProperties']['name']]['class'] = "null"
 
     #add that dictionary to our all_data using the name of the table
     #as a key.
@@ -46,16 +54,56 @@ with open('manifest.pickle', 'wb') as data:
 
 print(len(all_data))
 #print(all_data['Coldheart']['tier'])
-print("Exotic" in all_data['Coldheart']['tier'])
-print(not all_data['Raven Shard']['tier'])
+#print("Exotic" in all_data['Coldheart']['tier'])
+#print(not all_data['Raven Shard']['tier'])
 #cleanse tierless items AND non exotics
+weapons = []
+armor = []
+warlock = []
+hunter = []
+titan = []
+types = []
+weapon_ornaments = []
+ships = []
+emotes = []
+vehicles = []
+traits = []
 for item in list(all_data):
-    if not all_data[item]['tier']:
+    if (all_data[item]['type'] == "Weapon Ornament"):
+        weapon_ornaments.append(all_data[item])
+    elif (all_data[item]['type'] == "Ship"):
+        ships.append(all_data[item])
+    elif (all_data[item]['type'] == "Emote"):
+        emotes.append(all_data[item])
+    elif (all_data[item]['type'] == "Vehicle"):
+        vehicles.append(all_data[item])
+    elif (all_data[item]['type'] == "Trait"):
+        traits.append(all_data[item])
+    elif (all_data[item]['type'] == "Helmet"):
+        armor.append(all_data[item])
+    elif (all_data[item]['type'] == "Chest Armor"):
+        armor.append(all_data[item])
+    elif (all_data[item]['type'] == "Leg Armor"):
+        armor.append(all_data[item])
+    elif (all_data[item]['type'] == "Gauntlets"):
+        armor.append(all_data[item])
+    elif (all_data[item]['type'] == "Engram"):
         del(all_data[item])
-    elif "Exotic" not in all_data[item]['tier']:
-        del(all_data[item])
+    else:
+        weapons.append(all_data[item])
 
+for piece in armor:
+    if ("warlock" in piece['class']):
+        warlock.append(piece)
+    elif ("titan" in piece['class']):
+        titan.append(piece)
+    elif ("hunter" in piece['class']):
+        hunter.append(piece)
+    else:
+        print(piece)
+        
+#print(weapons)
 print(len(all_data))
-#ghorn = all_data['DestinyInventoryItemDefinition'][hash]
-
-#print('Name: '+ghorn['itemName'])
+#print(all_data["Rat King"])
+#from collections import Counter
+#print(Counter(types))
